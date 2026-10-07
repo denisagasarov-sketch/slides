@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Бизнес и каналы</title>
+<style>
+. Контент = пример лекции (JTBD профиль/хайлайтс). При вёрстке новой лекции: копируй CSS как есть, бери нужные раскладки, меняй только контент. -->
+<!-- ЛЕКЦИЯ: Использование JTBD для улучшения маркетинговой коммуникации — SMM (профиль и хайлайтс) -->
+<!-- Стиль: etalon v1.1 «Системный SMM». Слайды 1–10. Текст из ТЗ не изменён. -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>JTBD профиль — лекция, слайды 1–10</title>
+<style>
+@font-face{font-family:'Unbounded';font-weight:400;font-style:normal;src:url('localfonts/unbounded-cyrillic-400-normal.woff2') format('woff2');unicode-range:U+0400-04FF, U+0500-052F, U+2DE0-2DFF, U+A640-A69F;}
+@font-face{font-family:'Unbounded';font-weight:400;font-style:normal;src:url('localfonts/unbounded-latin-400-normal.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+2000-206F, U+2122, U+2190-2193, U+2122;}
+@font-face{font-family:'Unbounded';font-weight:700;font-style:normal;src:url('localfonts/unbounded-cyrillic-700-normal.woff2') format('woff2');unicode-range:U+0400-04FF, U+0500-052F, U+2DE0-2DFF, U+A640-A69F;}
+@font-face{font-family:'Unbounded';font-weight:700;font-style:normal;src:url('localfonts/unbounded-latin-700-normal.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+2000-206F, U+2122, U+2190-2193, U+2122;}
+@font-face{font-family:'Unbounded';font-weight:900;font-style:normal;src:url('localfonts/unbounded-cyrillic-900-normal.woff2') format('woff2');unicode-range:U+0400-04FF, U+0500-052F, U+2DE0-2DFF, U+A640-A69F;}
+@font-face{font-family:'Unbounded';font-weight:900;font-style:normal;src:url('localfonts/unbounded-latin-900-normal.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+2000-206F, U+2122, U+2190-2193, U+2122;}
+@font-face{font-family:'Onest';font-weight:400;font-style:normal;src:url('localfonts/onest-cyrillic-400-normal.woff2') format('woff2');unicode-range:U+0400-04FF, U+0500-052F, U+2DE0-2DFF, U+A640-A69F;}
+@font-face{font-family:'Onest';font-weight:400;font-style:normal;src:url('localfonts/onest-latin-400-normal.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+2000-206F, U+2122, U+2190-2193, U+2122;}
+@font-face{font-family:'Onest';font-weight:500;font-style:normal;src:url('localfonts/onest-cyrillic-500-normal.woff2') format('woff2');unicode-range:U+0400-04FF, U+0500-052F, U+2DE0-2DFF, U+A640-A69F;}
+@font-face{font-family:'Onest';font-weight:500;font-style:normal;src:url('localfonts/onest-latin-500-normal.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+2000-206F, U+2122, U+2190-2193, U+2122;}
+@font-face{font-family:'Onest';font-weight:700;font-style:normal;src:url('localfonts/onest-cyrillic-700-normal.woff2') format('woff2');unicode-range:U+0400-04FF, U+0500-052F, U+2DE0-2DFF, U+A640-A69F;}
+@font-face{font-family:'Onest';font-weight:700;font-style:normal;src:url('localfonts/onest-latin-700-normal.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+2000-206F, U+2122, U+2190-2193, U+2122;}
+  :root{
+    --bg-light:#FAF9F5;--bg-dark:#343333;--accent:#FF3CAC;
+    --lime:#C8FF99;--yellow:#F8FF78;
+    --ink:#1A1A1A;--ink-soft:#1A1A1Aa6;--paper:#FAF9F5;--paper-soft:#FAF9F5a0;
+    --line:#1A1A1A4d;--line-dark:#FAF9F54d;
+    --font-h:'Unbounded',sans-serif;--font-body:'Onest',sans-serif;--pad:64px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#2a2a2a;font-family:var(--font-body);display:flex;flex-direction:column;align-items:center;gap:40px;padding:48px 20px;}
+  .slide{width:1280px;height:720px;position:relative;overflow:hidden;flex-shrink:0;box-shadow:0 30px 80px rgba(0,0,0,.5);}
+  .label{color:#888;font-size:13px;letter-spacing:.04em;align-self:flex-start;margin-left:max(20px,calc(50% - 640px));}
+  .brand{position:absolute;display:flex;align-items:center;gap:10px;font-family:var(--font-h);font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;}
+  .brand .dot{width:9px;height:9px;background:var(--accent);border-radius:50%;}
+  .pageno{position:absolute;bottom:var(--pad);right:var(--pad);font-family:var(--font-h);font-weight:700;font-size:14px;letter-spacing:.1em;}
+
+  /* DECOR: контурная звезда-вспышка (16 лучей-игл, полый центр) — геометрия из исходника
+     дизайнера (Figma Star 37/38). Чистый inline-SVG (без CSS-маски, без рамки-бокса).
+     Цвет адаптивный через color: на кремовом тёмно-серый, на тёмном фоне белый.
+     Разметка: <svg class="star tr">…</svg> (углы tr/br/tl/bl) или class="star inline". */
+  svg.star{position:absolute;width:160px;height:160px;color:#525252;pointer-events:none;z-index:1;overflow:visible;}
+  svg.star path{fill:currentColor;}
+  svg.star.tr{top:28px;right:40px;width:160px;height:160px;}
+  svg.star.br{bottom:64px;right:96px;width:196px;height:196px;}
+  svg.star.tl{top:28px;left:40px;width:160px;height:160px;}
+  svg.star.bl{bottom:64px;left:96px;width:196px;height:196px;}
+  svg.star.inline{position:static;display:inline-block;width:118px;height:118px;flex-shrink:0;vertical-align:middle;}
+  .slide.dark svg.star,.divider svg.star,.slide.question.dark svg.star,.slide.work.dark svg.star{color:#FFFFFF;}
+  /* DECOR: kicker-линия — сквозной приём учебной версии.
+     Тот же класс .kicker-s, но теперь: лейбл (чёрный) + тонкая хэйрлайн-черта + маджента-точка.
+     Разметку менять не нужно — <div class="kicker-s">Текст</div> подхватывает новый вид. */
+  .kicker-s{display:flex;align-items:center;gap:14px;margin-bottom:18px;
+            font-family:var(--font-h);font-weight:700;font-size:12px;letter-spacing:.16em;
+            text-transform:uppercase;color:var(--ink);}
+  .kicker-s::after{content:"";order:2;height:1.5px;background:var(--line);flex:1;}
+  .kicker-s::before{content:"";order:3;width:8px;height:8px;border-radius:50%;
+                    background:var(--accent);flex-shrink:0;}
+
+  /* DECOR: инверсный разделитель главы — единственная тёмная заливка, функция = навигация.
+     Использование: <section class="slide divider"> … <div class="secno">01</div><h2>Глава</h2> … */
+  .divider{background:var(--bg-dark);color:var(--bg-light);padding:var(--pad);
+           display:flex;flex-direction:column;justify-content:center;position:relative;}
+  .divider .brand{top:var(--pad);right:auto;left:var(--pad);color:var(--bg-light);}
+  .divider .kicker-s{color:var(--bg-light);}
+  .divider .kicker-s::after{background:#FAF9F526;}
+  .divider .secno{font-family:var(--font-h);font-weight:900;font-size:120px;line-height:.8;
+                  color:var(--accent);letter-spacing:-.03em;margin-bottom:6px;}
+  .divider h2{font-family:var(--font-h);font-weight:900;text-transform:uppercase;
+              font-size:60px;line-height:.95;letter-spacing:-.01em;color:var(--bg-light);}
+  .divider .desc{font-family:var(--font-body);font-weight:400;font-size:19px;line-height:1.5;
+                 color:#FAF9F5b3;max-width:760px;margin-top:18px;}
+  .divider .pageno{color:#FAF9F580;}
+
+  /* РЕЖИМ БЕЗ ДЕКОРА: добавь class="plain" на <body> — kicker-линия откатывается
+     к простому кикеру (маджента-лейбл без черты и точки). Разделители .divider
+     в этом режиме просто не используются (см. SKILL.md). */
+  body.plain .kicker-s{display:block;color:var(--accent);font-family:var(--font-body);
+                       font-weight:700;font-size:13px;letter-spacing:.16em;
+                       text-transform:uppercase;margin-bottom:12px;}
+  body.plain .kicker-s::after,
+  body.plain .kicker-s::before{content:none;display:none;}
+
+  /* DARK — тёмный контентный слайд (naming/chipgroups/equation): чёрный фон, кремовый текст.
+     Маджента-акценты остаются. Линии светлеют. */
+  .slide.dark{background:var(--bg-dark);color:var(--bg-light);}
+  .slide.dark .brand{color:var(--bg-light);}
+  .slide.dark .h-work{color:var(--bg-light);}
+  .slide.dark .kicker-s{color:var(--bg-light);}
+  .slide.dark .kicker-s::after{background:var(--line-dark);}
+  .slide.dark .pageno{color:#FAF9F580;}
+  .slide.dark .leadp{color:var(--bg-light);}
+  /* naming dark */
+  .slide.dark.naming .formula{background:transparent;padding:0;}
+  .slide.dark.naming .term{color:var(--bg-light);}
+  /* .lower — опустить формулу+примеры ниже (слайд 3) */
+  .slide.naming.lower .formula{margin-top:140px;}
+  .slide.dark.naming .ex{color:var(--bg-light);border-color:var(--line-dark);}
+  .slide.dark.naming .ex:last-child{border-color:var(--line-dark);}
+  .slide.dark.naming .ex-label{color:#FAF9F599;}
+  /* chipgroups dark — акценты тёмного слайда: лайм для обычной группы, жёлтый для accent-группы; контур чипов лайм */
+  .slide.dark.chipgroups .gtitle{color:var(--lime);}
+  .slide.dark.chipgroups .gchip{color:var(--bg-light);border-color:var(--lime);background:transparent;}
+  .slide.dark.chipgroups .group.accent .gtitle{color:var(--yellow);}
+  .slide.dark.chipgroups .group.accent .gchip{border-color:var(--lime);color:var(--bg-light);background:transparent;}
+
+  /* COVER */
+  .cover{background:var(--bg-light);color:var(--ink);padding:var(--pad);display:flex;flex-direction:column;justify-content:space-between;}
+  .cover::before{content:"";position:absolute;left:0;top:0;bottom:0;width:14px;background:var(--accent);}
+  .cover .brand{top:var(--pad);left:calc(var(--pad) + 6px);color:var(--ink);}
+  .cover .top-row{display:flex;justify-content:space-between;align-items:flex-start;padding-left:6px;}
+  .cover .lecture-tag{border:1.5px solid var(--ink);border-radius:100px;padding:8px 18px;font-family:var(--font-h);font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;}
+  .cover h1{font-family:var(--font-h);font-weight:900;text-transform:uppercase;font-size:58px;line-height:.98;letter-spacing:-.01em;padding-left:6px;max-width:1120px;}
+  .cover h1 em{font-style:normal;color:var(--accent);}
+  .cover .footer-row{display:flex;justify-content:space-between;align-items:flex-end;padding-left:6px;}
+  .cover .author{display:flex;flex-direction:column;gap:4px;}
+  .cover .author .by{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);}
+  .cover .author .name{font-family:var(--font-h);font-weight:700;font-size:20px;}
+  .cover .big-no{font-family:var(--font-h);font-weight:900;font-size:120px;line-height:.8;color:var(--accent);letter-spacing:-.03em;}
+
+  /* WORK base */
+  .work{background:var(--bg-light);color:var(--ink);padding:var(--pad);display:flex;flex-direction:column;}
+  .work .brand{top:var(--pad);right:var(--pad);color:var(--ink);;display:none;}
+  .h-work{font-family:var(--font-h);font-weight:900;text-transform:uppercase;font-size:42px;line-height:1;letter-spacing:-.01em;color:var(--ink);}
+  .h-work em{font-style:normal;color:var(--accent);}
+
+  /* GRID 2x3 (слайд 2) */
+  .gridcards .head{margin-bottom:34px;}
+  .gridcards .cards{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:1fr;gap:18px;flex:1;}
+  .gridcards .card{border:1.5px solid var(--ink);border-radius:18px;padding:28px 26px;display:flex;flex-direction:column;justify-content:space-between;gap:18px;background:#fff;}
+  .gridcards .card .cn{font-family:var(--font-h);font-weight:900;font-size:24px;color:var(--accent);}
+  .gridcards .card .ct{font-family:var(--font-h);font-weight:700;text-transform:uppercase;font-size:19px;line-height:1.1;}
+  .gridcards .card.accent{background:var(--accent);border-color:var(--accent);}
+  .gridcards .card.accent .cn{color:var(--ink);}
+  .gridcards .card.accent .ct{color:#fff;}
+
+  /* NUMGRID — нумерованный список (слайд 2) */
+  .numgrid .head{margin-bottom:30px;}
+  .numgrid .nrows{display:flex;flex-direction:column;flex:1;justify-content:center;max-width:1000px;}
+  .numgrid .nrow{display:flex;align-items:center;gap:20px;padding:17px 4px;border-top:1.5px solid var(--line);}
+  .numgrid .nrow:last-child{border-bottom:1.5px solid var(--line);}
+  .numgrid .nrow::before{content:"";width:13px;height:13px;background:var(--accent);flex-shrink:0;}
+  .numgrid .nrow .nn{font-family:var(--font-h);font-weight:900;font-size:28px;color:var(--accent);min-width:62px;}
+  .numgrid .nrow .nt{font-family:var(--font-h);font-weight:700;text-transform:uppercase;font-size:24px;line-height:1.05;color:var(--ink);}
+
+  /* NUMGRID DARK — тёмный вариант оглавления (слайды «Хайлайтс» и «Откуда берём возражения»):
+     фон #343333, хэйрлайны строк лаймовые, буллеты-квадраты остаются маджентой, текст пунктов кремовый.
+     Заголовок: по умолчанию кремовый; для лаймового заголовка добавь .lime-head на слайд. */
+  .slide.work.dark.numgrid{background:var(--bg-dark);color:var(--bg-light);}
+  .slide.work.dark.numgrid .h-work{color:var(--bg-light);}
+  .slide.work.dark.numgrid.lime-head .h-work{color:var(--yellow);}
+  .slide.work.dark.numgrid .nrow{border-top-color:var(--lime);}
+  .slide.work.dark.numgrid .nrow:last-child{border-bottom-color:var(--lime);}
+  .slide.work.dark.numgrid .nrow .nt{color:var(--bg-light);}
+  .slide.work.dark.numgrid .kicker-s{color:var(--bg-light);}
+  .slide.work.dark.numgrid .kicker-s::after{background:var(--line-dark);}
+  .slide.work.dark.numgrid .pageno{color:#FAF9F580;}
+
+  /* NAMING list (слайд 3) */
+  .naming .head{margin-bottom:8px;}
+  .naming .formula{display:flex;flex-direction:row;align-items:center;justify-content:center;flex-wrap:nowrap;gap:14px;margin:22px 0 6px;white-space:nowrap;}
+  .naming .formula .term{font-family:var(--font-h);font-weight:700;font-size:24px;line-height:1.1;color:var(--ink);padding:6px 0;white-space:nowrap;}
+  .naming .formula .plus{font-family:var(--font-h);font-weight:900;font-size:32px;color:var(--accent);line-height:1;flex-shrink:0;}
+  .naming .formula .eq{font-family:var(--font-h);font-weight:900;font-size:32px;color:var(--accent);line-height:1;justify-self:center;}
+  .naming .ex-label{font-family:var(--font-body);font-weight:700;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-top:24px;margin-bottom:12px;}
+  .naming .examples{display:flex;flex-direction:column;gap:0;}
+  .naming .ex{display:flex;align-items:center;gap:18px;padding:13px 4px;border-top:1.5px solid var(--line);font-family:var(--font-body);font-weight:500;text-transform:none;font-size:21px;}
+  .naming .ex:last-child{border-bottom:1.5px solid var(--line);}
+  .naming .ex .sep{color:var(--accent);}
+
+  /* CHIP-GROUPS (слайд 4) */
+  .chipgroups{background:var(--bg-light);color:var(--ink);padding:var(--pad);display:flex;flex-direction:column;}
+  .chipgroups .brand{top:var(--pad);right:var(--pad);color:var(--ink);;display:none;}
+  .chipgroups .head{margin-bottom:30px;}
+  .chipgroups .groups{display:grid;grid-template-columns:1fr 1fr;gap:30px;flex:1;align-content:center;}
+  .chipgroups .group{display:flex;flex-direction:column;gap:16px;}
+  .chipgroups .group .gtitle{font-family:var(--font-h);font-weight:700;text-transform:uppercase;font-size:18px;color:var(--ink);display:flex;align-items:center;gap:12px;line-height:1.15;}
+  .chipgroups .group .gtitle::before{content:"";width:10px;height:10px;background:var(--accent);border-radius:50%;flex-shrink:0;}
+  .chipgroups .cloud{display:flex;flex-wrap:wrap;gap:10px;}
+  .chipgroups .gchip{font-family:var(--font-h);font-weight:700;font-size:12px;letter-spacing:.04em;text-transform:uppercase;padding:11px 18px;border-radius:100px;border:1.5px solid var(--ink);color:var(--ink);background:#fff;}
+  .chipgroups .group.accent .gtitle{color:var(--accent);}
+  .chipgroups .group.accent .gchip{border-color:var(--ink);color:var(--ink);background:#fff;}
+
+  /* FORMULA (слайды 5–10): заголовок + 2 колонки (скелет / пример) */
+  .formula{background:var(--bg-light);color:var(--ink);padding:var(--pad);display:flex;flex-direction:column;}
+  .formula .brand{top:var(--pad);right:var(--pad);color:var(--ink);;display:none;}
+  .formula .head{margin-bottom:30px;}
+  .formula .fnum{font-family:var(--font-h);font-weight:700;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;display:flex;align-items:center;gap:12px;}
+  .formula .fnum::before{content:"";width:14px;height:14px;background:var(--accent);}
+  .formula h2{font-family:var(--font-h);font-weight:900;text-transform:uppercase;font-size:38px;line-height:1;letter-spacing:-.01em;}
+  .formula .cols{display:grid;grid-template-columns:1fr 1fr;gap:0;flex:1;border-top:2px solid var(--ink);}
+  .formula .col{padding:30px 34px;display:flex;flex-direction:column;gap:16px;}
+  .formula .col.skeleton{border-right:1.5px solid var(--line);}
+  .formula .col .col-label{font-family:var(--font-body);font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);}
+  .formula .col.example .col-label{color:var(--accent);}
+  .formula .col ul{list-style:none;display:flex;flex-direction:column;gap:14px;}
+  .formula .col li{font-family:var(--font-body);font-size:20px;line-height:1.4;position:relative;padding-left:26px;}
+  .formula .col.skeleton li{color:var(--ink);font-weight:500;}
+  .formula .col.skeleton li b{font-weight:800;}
+  .formula .col.skeleton li::before{content:"";position:absolute;left:0;top:7px;width:11px;height:11px;background:var(--ink);}
+  .formula .col.example li{color:var(--ink);font-weight:500;}
+  .formula .col.example li::before{content:"";position:absolute;left:0;top:7px;width:11px;height:11px;background:var(--accent);}
+
+  /* QUESTION (раздел-вопрос: Это про меня / Что за продукт / Что прояснить) */
+  .question{background:var(--bg-light);color:var(--ink);padding:var(--pad);display:flex;flex-direction:column;justify-content:center;}
+  .question .brand{top:var(--pad);right:var(--pad);color:var(--ink);;display:none;}
+  .question h2{font-family:var(--font-h);font-weight:900;text-transform:uppercase;font-size:52px;line-height:1.22;letter-spacing:-.01em;max-width:1080px;color:var(--ink);}
+  .question .desc{font-family:var(--font-body);font-weight:500;font-size:24px;line-height:1.5;color:var(--ink);max-width:880px;margin-top:24px;}
+  .question .desc sup{color:var(--accent);font-weight:700;}
+  .question .footnote{position:absolute;left:var(--pad);bottom:var(--pad);font-family:var(--font-body);font-weight:400;font-size:13px;line-height:1.4;color:var(--ink-soft);max-width:900px;padding-left:16px;}
+  .question .footnote::before{content:"\002A";position:absolute;left:0;top:0;color:var(--accent);font-weight:700;}
+  .question .names{display:flex;flex-direction:column;gap:12px;margin-top:30px;}
+  .question .names .nm{font-family:var(--font-body);font-weight:500;font-size:20px;color:var(--ink);padding-left:28px;position:relative;}
+  .question .names .nm::before{content:"";position:absolute;left:0;top:8px;width:11px;height:11px;background:var(--accent);}
+
+  /* QUESTION DARK — тёмный вариант слайда-вопроса (слайды «Это про меня», «Что за продукт», «Что прояснить»):
+     фон #343333, заголовок-«призрак» #1A1A1A (темнее фона, низкий контраст), пояснение и пункты кремовые.
+     Буллеты по умолчанию остаются маджентой; для жёлтых буллетов добавь .yellow-bul на слайд. */
+  .slide.question.dark{background:var(--bg-dark);color:var(--bg-light);}
+  .slide.question.dark h2{color:var(--ink);}
+  .slide.question.dark .desc{color:var(--bg-light);}
+  .slide.question.dark .names .nm{color:var(--bg-light);}
+  .slide.question.dark .pageno{color:#FAF9F580;}
+  .slide.question.dark.yellow-bul .names .nm::before{background:var(--yellow);}
+
+  /* SECTION (СВЕТЛАЯ подглава — средний уровень) */
+  .section{background:var(--bg-light);color:var(--ink);padding:var(--pad);display:flex;flex-direction:column;justify-content:center;}
+  .section .brand{top:var(--pad);right:var(--pad);color:var(--ink);;display:none;}
+  .section .secno{font-family:var(--font-h);font-weight:900;font-size:90px;line-height:.8;color:var(--accent);letter-spacing:-.03em;margin-bottom:10px;}
+  .section h2{font-family:var(--font-h);font-weight:900;text-transform:uppercase;font-size:44px;line-height:1.0;letter-spacing:-.01em;max-width:1000px;color:var(--ink);}
+  .section .desc{font-family:var(--font-body);font-weight:400;font-size:19px;line-height:1.5;color:var(--ink-soft);max-width:760px;margin-top:22px;}
+  .section .names{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;}
+  .section .names .nm{font-family:var(--font-h);font-weight:700;font-size:12px;letter-spacing:.04em;text-transform:uppercase;padding:10px 18px;border-radius:100px;border:1.5px solid var(--ink);color:var(--ink);}
+  .section .names .nm.accent{background:#fff;border-color:var(--ink);color:var(--ink);}
+
+  /* STRUCTURE (обзор раскадровки: блоки слайд-текст) */
+  .structure{background:var(--bg-light);color:var(--ink);padding:48px var(--pad);display:flex;flex-direction:column;}
+  .structure .brand{top:48px;right:var(--pad);color:var(--ink);;display:none;}
+  .structure .head{margin-bottom:18px;display:flex;align-items:baseline;gap:16px;}
+  .structure .head .stag{font-family:var(--font-h);font-weight:900;text-transform:uppercase;font-size:30px;letter-spacing:-.01em;}
+  .structure .head .stag em{font-style:normal;color:var(--accent);}
+  .structure .head .ssub{font-family:var(--font-body);font-weight:500;font-size:14px;color:var(--ink-soft);}
+  .structure .rows{display:flex;flex-direction:column;flex:1;}
+  .structure .row{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:11px 0;border-top:1.5px solid var(--line);align-content:start;}
+  .structure .row:last-child{border-bottom:1.5px solid var(--line);}
+  .structure .row .rk{display:flex;flex-direction:column;gap:3px;}
+  .structure .row .rk .rn{font-family:var(--font-h);font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--accent);}
+  .structure .row .rk .rf{font-family:var(--font-body);font-weight:400;font-size:11px;line-height:1.3;color:var(--ink-soft);}
+  .structure .row .rc{font-family:var(--font-body);font-weight:400;font-size:16.5px;line-height:1.6;color:var(--ink);}
+  .structure .row .rc b{font-family:var(--font-h);font-weight:700;font-size:12.5px;text-transform:uppercase;display:block;margin-bottom:3px;letter-spacing:.01em;}
+  .structure.tight .row{padding:8px 0;}
+  .structure.tight .row .rc{font-size:12px;line-height:1.35;}
+  .structure.tight .row .rc b{font-size:11.5px;}
+  /* FILL — заполнить высоту без переполнения: компактнее кегль + умеренные отступы (слайд 20) */
+  .structure.fill .row{padding:14px 0;align-content:center;}
+  .structure.fill .row .rc{font-size:14px;line-height:1.5;}
+  .structure.fill .row .rc b{font-size:13px;}
+
+  /* NUMLIST (нумерованный список — FAQ выбор) */
+  .numlist .head{margin-bottom:30px;}
+  .numlist .items{display:flex;flex-direction:column;flex:1;justify-content:center;gap:0;max-width:820px;}
+  .numlist .it{display:flex;align-items:center;gap:26px;padding:20px 4px;border-top:1.5px solid var(--line);}
+  .numlist .it:last-child{border-bottom:1.5px solid var(--line);}
+  .numlist .it .nn{font-family:var(--font-h);font-weight:900;font-size:30px;color:var(--accent);min-width:50px;}
+  .numlist .it .nt{font-family:var(--font-h);font-weight:700;text-transform:uppercase;font-size:22px;line-height:1.05;}
+
+  /* DEFLIST (формулы упаковки) */
+  .work .deflist-rows{display:flex;flex-direction:column;flex:1;justify-content:center;}
+  .dlrow{display:grid;grid-template-columns:340px 1fr;gap:32px;align-items:baseline;padding:16px 4px;border-top:1.5px solid var(--line);}
+  .dlrow:last-child{border-bottom:1.5px solid var(--line);}
+  .dlrow .dt{font-family:var(--font-h);font-weight:700;text-transform:uppercase;font-size:17px;line-height:1.1;color:var(--ink);}
+  .dlrow .dt em{font-style:normal;color:var(--ink);}
+  .dlrow .dd{font-family:var(--font-body);font-weight:500;font-size:20px;line-height:1.45;color:var(--ink);}
+  .leadp{font-family:var(--font-body);font-weight:500;font-size:18px;line-height:1.5;color:var(--ink);margin-bottom:8px;}
+
+  /* FAQ CARDS */
+  .faqcards{background:var(--bg-light);color:var(--ink);padding:48px var(--pad);display:flex;flex-direction:column;}
+  .faqcards .brand{top:48px;right:var(--pad);color:var(--ink);;display:none;}
+  .faqcards .head{margin-bottom:20px;}
+  .faqcards .cards{display:flex;flex-direction:column;gap:12px;flex:1;justify-content:center;}
+  .faqcards .fc{border:1.5px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;padding:16px 22px;background:#fff;}
+  .faqcards .fc .obj{font-family:var(--font-h);font-weight:700;font-size:15px;text-transform:uppercase;color:var(--ink);margin-bottom:7px;letter-spacing:.01em;}
+  .faqcards .fc .q{font-family:var(--font-body);font-weight:700;font-size:16px;color:var(--accent);margin-bottom:5px;}
+  .faqcards .fc .a{font-family:var(--font-body);font-weight:500;font-size:15.5px;line-height:1.45;color:var(--ink);}
+
+  /* ============================================================
+     КАСТОМНЫЕ РАСКЛАДКИ (добавлены в v2.4 на основе лекции «Аналитика»).
+     Переиспользуемые: datatable (cols2/cols3, +dark), maprows (пары значение→категория),
+     ctrscale (крупная шкала), steplist (список с маджента-квадратами), stepk (+step-anchor
+     для серий шагов), warn (строка-предупреждение), bigfact (крупный лид), vc/midwrap
+     (вертикальное центрирование), formula.compact. Подробности — references/custom-layouts.md
+     ============================================================ */
+  /* DATATABLE — компактная таблица данных (метрики/конверсии/форматы) в стиле курса.
+     Заголовки колонок — Unbounded капс; ячейки — буллет-списки Onest. Работает и на тёмном. */
+  .datatable{display:grid;gap:0;flex:1;align-content:start;border-top:2px solid var(--ink);}
+  .datatable.cols2{grid-template-columns:1fr 1fr;}
+  .datatable.cols3{grid-template-columns:1fr 1fr 1fr;}
+  .datatable .dcol{padding:24px 26px;display:flex;flex-direction:column;gap:14px;border-right:1.5px solid var(--line);}
+  .datatable .dcol:last-child{border-right:none;}
+  .datatable .dhead{font-family:var(--font-h);font-weight:900;text-transform:uppercase;font-size:20px;letter-spacing:.01em;color:var(--ink);}
+  .datatable .dcol.accent .dhead{color:var(--accent);}
+  .datatable ul{list-style:none;display:flex;flex-direction:column;gap:9px;}
+  .datatable li{font-family:var(--font-body);font-weight:500;font-size:16.5px;line-height:1.35;color:var(--ink);position:relative;padding-left:22px;}
+  .datatable li::before{content:"";position:absolute;left:0;top:7px;width:9px;height:9px;background:var(--accent);}
+  /* тёмный вариант таблицы */
+  .slide.dark .datatable{border-top-color:var(--line-dark);}
+  .slide.dark .datatable .dcol{border-right-color:var(--line-dark);}
+  .slide.dark .datatable .dhead{color:var(--bg-light);}
+  .slide.dark .datatable .dcol.accent .dhead{color:var(--lime);}
+  .slide.dark .datatable li{color:var(--bg-light);}
+  .slide.dark .datatable li::before{background:var(--lime);}
+
+  /* STEP — слайд-шаг (Шаг N. ...): крупный мажента «+» в кикере + заголовок шага */
+  /* STEP-ANCHOR — единый верхний якорь для серии шагов 23–28: вместо центрирования
+     фиксируем верх контента, чтобы кикер «Шаг N» начинался на одной высоте на всех
+     шести слайдах (контент разной высоты больше не «прыгает»). */
+  .slide.work.step-anchor{justify-content:flex-start;padding-top:248px;}
+  .stepk{font-family:var(--font-h);font-weight:700;font-size:18px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:flex;align-items:center;gap:13px;}
+  .stepk .pl{font-weight:900;font-size:33px;line-height:1;color:var(--accent);}
+  /* WARN — строка-предупреждение !!! */
+  .warn{font-family:var(--font-body);font-weight:700;font-size:16px;color:var(--accent);margin-top:18px;display:flex;align-items:flex-start;gap:10px;}
+  .warn::before{content:"!!!";font-family:var(--font-h);font-weight:900;color:var(--accent);}
+  .slide.dark .warn,.slide.dark .warn::before{color:var(--yellow);}
+  /* большой одиночный лид-абзац по центру */
+  .bigfact{font-family:var(--font-body);font-weight:500;font-size:26px;line-height:1.5;color:var(--ink);max-width:1000px;}
+  .bigfact b{font-family:var(--font-h);font-weight:900;}
+  .slide.dark .bigfact{color:var(--bg-light);}
+
+  /* STEPLIST — простой список с маджента-квадратами (слайды-шаги на креме) */
+  .steplist{list-style:none;display:flex;flex-direction:column;gap:12px;max-width:980px;}
+  .steplist li{font-family:var(--font-body);font-weight:500;font-size:21px;line-height:1.4;color:var(--ink);position:relative;padding-left:28px;}
+  .steplist li::before{content:"";position:absolute;left:0;top:9px;width:11px;height:11px;background:var(--accent);}
+  .steplist li b{font-family:var(--font-h);font-weight:700;}
+
+  /* тёмный question со светлым заголовком (короткие этап-заголовки, где призрак читается плохо) */
+  .slide.question.dark.lit h2{color:var(--bg-light);}
+
+  /* VC — вертикальное центрирование контента слайда (для малозаполненных) */
+  .slide.work.vc{justify-content:center;}
+  /* блок-обёртка с ограничением ширины и центровкой по вертикали */
+  .midwrap{display:flex;flex-direction:column;justify-content:center;flex:1;max-width:1080px;}
+
+  /* MAPROWS — пары «значение → категория» (слайд «категории удобнее») */
+  .maprows{display:flex;flex-direction:column;max-width:520px;gap:0;}
+  .maprow{display:grid;grid-template-columns:1fr 40px 1fr;align-items:center;gap:8px;padding:14px 4px;border-top:1.5px solid var(--line);}
+  .maprow:last-child{border-bottom:1.5px solid var(--line);}
+  .maprow .mv{font-family:var(--font-body);font-weight:500;font-size:24px;color:var(--ink);text-align:right;}
+  .maprow .mc{font-family:var(--font-h);font-weight:900;font-size:26px;color:var(--accent);text-align:left;}
+  .maprow .marr{display:flex;align-items:center;justify-content:center;}
+
+  /* CTRSCALE — крупный пример CTR (низкий/средний/высокий) */
+  .ctrscale{display:flex;flex-direction:column;gap:0;max-width:720px;margin-top:6px;}
+  .ctrrow{display:flex;align-items:baseline;gap:16px;padding:13px 4px;border-top:1.5px solid var(--line);}
+  .ctrrow:last-child{border-bottom:1.5px solid var(--line);}
+  .ctrrow .cval{font-family:var(--font-h);font-weight:700;font-size:22px;color:var(--ink);min-width:160px;}
+  .ctrrow .clab{font-family:var(--font-body);font-weight:500;font-size:19px;color:var(--ink-soft);}
+  .ctrrow .clab.hi{color:var(--accent);font-weight:700;}
+
+  /* FORMULA COMPACT — для коротких 2-колоночных сравнений: контент колонок по центру по вертикали,
+     чтобы вертикальный разделитель не тянулся в пустоту */
+  .slide.formula.compact .col{justify-content:center;}
+
+  /* ============================================================
+     v2.4.1 — три штатных дополнения (введены при сборке эталонной лекции
+     «Продвинутая аналитика контента»). Копируются вместе со всем CSS.
+     ============================================================ */
+  /* STEPLIST INK — вариант steplist с ЧЁРНЫМИ буллетами-квадратами.
+     Нужен, когда маджента в списке была бы вторым пунчем на слайде
+     (правило «один пунч мадженты на блок»). Разметка: <ul class="steplist ink"> */
+  .steplist.ink li::before{background:var(--ink);}
+  /* EX-LABEL (общий) — метка «Пример …» над ctrscale/примером.
+     В базе селектор был только `.naming .ex-label`, поэтому на обычных
+     work-слайдах с ctrscale метка не стилизовалась. Теперь класс глобальный;
+     `.naming .ex-label` выше остаётся и продолжает работать как раньше. */
+  .ex-label{font-family:var(--font-body);font-weight:700;font-size:14px;letter-spacing:.1em;
+            text-transform:uppercase;color:var(--ink-soft);margin-top:24px;margin-bottom:12px;}
+  /* NUMLIST DARK — хэйрлайны строк на графите. Без этого строки numlist на тёмном
+     почти невидимы (--line = чёрный с альфой 30%). По аналогии с .slide.dark .datatable. */
+  .slide.dark .numlist .it{border-top-color:var(--line-dark);}
+  .slide.dark .numlist .it:last-child{border-bottom-color:var(--line-dark);}
+
+</style>
+</head>
+<body>
+
+<!-- СЛАЙД 1 -->
+<div class="label">Слайд 1</div>
+<section class="slide cover">
+  <svg class="star tr" viewBox="0 0 200 200" aria-hidden="true"><path fill-rule="evenodd" d="M100.00 3.00L100.82 95.88L137.12 10.38L102.33 96.51L168.59 31.41L103.49 97.67L189.62 62.88L104.12 99.18L197.00 100.00L104.12 100.82L189.62 137.12L103.49 102.33L168.59 168.59L102.33 103.49L137.12 189.62L100.82 104.12L100.00 197.00L99.18 104.12L62.88 189.62L97.67 103.49L31.41 168.59L96.51 102.33L10.38 137.12L95.88 100.82L3.00 100.00L95.88 99.18L10.38 62.88L96.51 97.67L31.41 31.41L97.67 96.51L62.88 10.38L99.18 95.88Z M104.0 100 A4.0 4.0 0 1 0 96.0 100 A4.0 4.0 0 1 0 104.0 100Z"/></svg>
+  <svg class="star br" viewBox="0 0 200 200" aria-hidden="true"><path fill-rule="evenodd" d="M100.00 3.00L100.82 95.88L137.12 10.38L102.33 96.51L168.59 31.41L103.49 97.67L189.62 62.88L104.12 99.18L197.00 100.00L104.12 100.82L189.62 137.12L103.49 102.33L168.59 168.59L102.33 103.49L137.12 189.62L100.82 104.12L100.00 197.00L99.18 104.12L62.88 189.62L97.67 103.49L31.41 168.59L96.51 102.33L10.38 137.12L95.88 100.82L3.00 100.00L95.88 99.18L10.38 62.88L96.51 97.67L31.41 31.41L97.67 96.51L62.88 10.38L99.18 95.88Z M104.0 100 A4.0 4.0 0 1 0 96.0 100 A4.0 4.0 0 1 0 104.0 100Z"/></svg>
+  <div class="brand"><span class="dot"></span>СИСТЕМНЫЙ SMM</div>
+  <div class="top-row"><span></span></div>
+  <h1>БИЗНЕС <em>И КАНАЛЫ</em></h1>
+  <div class="footer-row">
+    <div class="author"><span class="by">Аналитика</span><span class="name">Кейт Семёнова</span></div>
+  </div>
+</section>
+
+<!-- СЛАЙД 2 -->
+<div class="label">Слайд 2</div>
+<section class="slide work vc">
+  <div class="midwrap">
+    <div class="kicker-s">Оценка результата</div>
+    <ul class="steplist ink">
+      <li>сколько выручки и продаж принес SMM;</li>
+      <li>как результат изменился относительно прошлого периода;</li>
+      <li>какие каналы дали основной вклад;</li>
+      <li>какие каналы растут, а какие проседают;</li>
+      <li>куда имеет смысл направлять больше ресурсов;</li>
+      <li>где данных пока недостаточно для решения.</li>
+    </ul>
+  </div>
+  <div class="pageno">02 / 16</div>
+</section>
+
+<!-- СЛАЙД 3 -->
+<div class="label">Слайд 3</div>
+<section class="slide divider">
+  <svg class="star tr" viewBox="0 0 200 200" aria-hidden="true"><path fill-rule="evenodd" d="M100.00 3.00L100.82 95.88L137.12 10.38L102.33 96.51L168.59 31.41L103.49 97.67L189.62 62.88L104.12 99.18L197.00 100.00L104.12 100.82L189.62 137.12L103.49 102.33L168.59 168.59L102.33 103.49L137.12 189.62L100.82 104.12L100.00 197.00L99.18 104.12L62.88 189.62L97.67 103.49L31.41 168.59L96.51 102.33L10.38 137.12L95.88 100.82L3.00 100.00L95.88 99.18L10.38 62.88L96.51 97.67L31.41 31.41L97.67 96.51L62.88 10.38L99.18 95.88Z M104.0 100 A4.0 4.0 0 1 0 96.0 100 A4.0 4.0 0 1 0 104.0 100Z"/></svg>
+  <div class="brand"><span class="dot"></span>СИСТЕМНЫЙ SMM</div>
+  <div class="secno">01</div>
+  <h2>Оцениваем общий бизнес-результат SMM</h2>
+  <div class="pageno">03 / 16</div>
+</section>
+
+<!-- СЛАЙД 4 -->
+<div class="label">Слайд 4</div>
+<section class="slide work">
+  <div class="kicker-s">Оцениваем результат</div>
+  <div class="head"><h2 class="h-work">«ИТОГО» — показывает совокупный результат всех SMM-каналов.</h2></div>
+  <div class="deflist-rows">
+    <div class="dlrow"><div class="dt">Выручка</div><div class="dd">Растет или снижается вклад SMM в бизнес</div></div>
+    <div class="dlrow"><div class="dt">Продажи</div><div class="dd">Стало больше покупок или меньше</div></div>
+    <div class="dlrow"><div class="dt">Средний чек</div><div class="dd">Изменилась ли сумма одной покупки</div></div>
+    <div class="dlrow"><div class="dt">Лиды</div><div class="dd">Стало больше потенциальных клиентов или меньше</div></div>
+    <div class="dlrow"><div class="dt">Затраты</div><div class="dd">Сколько денег вложили в получение результата</div></div>
+  </div>
+  <div class="pageno">04 / 16</div>
+</section>
+
+<!-- СЛАЙД 5 -->
+<div class="label">Слайд 5</div>
+<section class="slide work vc">
+  <div class="kicker-s">Результат по каналам</div>
+  <div class="midwrap" style="gap:24px;">
+    <h2 class="h-work">Смотрим бизнес-результат по каналам</h2>
+    <p class="leadp">Смотрим, какой вклад каждый из них внес в выручку и продажи. Видим не только, вырос канал или снизился, но и за счет каких показателей изменился его бизнес-результат.</p>
+    <p class="bigfact">Например, после разбивки по каналам видно, что основной вклад в рост дал Instagram: <b>выручка выросла примерно на 21%</b>. Telegram вырос примерно на <b>33%</b>, LinkedIn остался на прежнем уровне, а YouTube принес первую продажу.</p>
+  </div>
+  <div class="pageno">05 / 16</div>
+</section>
+
+<!-- СЛАЙД 6 -->
+<div class="label">Слайд 6</div>
+<section class="slide work vc">
+  <div class="kicker-s">Доля выручки</div>
+  <div class="midwrap" style="gap:24px;">
+    <p class="leadp">Дополнительно смотрим долю выручки — какую часть всей SMM-выручки принес каждый канал. Это помогает оценить не только динамику, но и масштаб его влияния на общий результат.</p>
+    <p class="bigfact">Например, Instagram дает около <b>83% всей выручки</b> из SMM. Поэтому изменения в этом канале значительно сильнее влияют на общий результат, чем изменения в канале с долей 3%.</p>
+  </div>
+  <div class="pageno">06 / 16</div>
+</section>
+
+<!-- СЛАЙД 7 -->
+<div class="label">Слайд 7</div>
+<section class="slide work vc">
+  <div class="kicker-s">Продажи и выручка</div>
+  <div class="midwrap" style="gap:24px;">
+    <p class="leadp">Количество продаж и выручку также смотрим вместе.</p>
+    <p class="bigfact">Канал может приносить меньше продаж, но больше выручки за счет <b>более высокого среднего чека</b>. Поэтому вывод по каналу не стоит делать только по одному показателю.</p>
+  </div>
+  <div class="pageno">07 / 16</div>
+</section>
+
+<!-- СЛАЙД 8 -->
+<div class="label">Слайд 8</div>
+<section class="slide work">
+  <div class="kicker-s">С учетом затрат</div>
+  <div class="head"><h2 class="h-work">Сравниваем каналы с учетом затрат</h2></div>
+  <div class="deflist-rows">
+    <div class="dlrow"><div class="dt">CPL <em>(Cost per Lead)</em></div><div class="dd">сколько в среднем стоит один полученный лид;</div></div>
+    <div class="dlrow"><div class="dt">CPA <em>(Cost per Acquisition)</em></div><div class="dd">сколько в среднем стоит одна продажа;</div></div>
+    <div class="dlrow"><div class="dt">ROMI <em>(Return on Marketing Investment)</em></div><div class="dd">насколько окупаются вложения в маркетинг.</div></div>
+  </div>
+  <div class="pageno">08 / 16</div>
+</section>
+
+<!-- СЛАЙД 9 -->
+<div class="label">Слайд 9</div>
+<section class="slide structure tight">
+  <div class="kicker-s">Динамика показателей</div>
+  <div class="head" style="margin-bottom:24px;"><span class="stag">Важно смотреть не только на текущее значение этих показателей, но и на их динамику относительно прошлого периода.</span></div>
+  <div class="rows">
+    <div class="row"><div class="rk"><span class="rn">Telegram</span></div><div class="rc"><b>Затраты -10% | Лиды +50% | Продажи +33% | Выручка +33%</b> CPL и CPA снизились, ROMI вырос</div></div>
+    <div class="row"><div class="rk"><span class="rn">Instagram</span></div><div class="rc"><b>Затраты +28% | Лиды +10% | Продажи +21% | Выручка +21%</b> ROMI немного снизился</div></div>
+  </div>
+  <div class="pageno">09 / 16</div>
+</section>
+
+<!-- СЛАЙД 10 -->
+<div class="label">Слайд 10</div>
+<section class="slide divider">
+  <svg class="star tr" viewBox="0 0 200 200" aria-hidden="true"><path fill-rule="evenodd" d="M100.00 3.00L100.82 95.88L137.12 10.38L102.33 96.51L168.59 31.41L103.49 97.67L189.62 62.88L104.12 99.18L197.00 100.00L104.12 100.82L189.62 137.12L103.49 102.33L168.59 168.59L102.33 103.49L137.12 189.62L100.82 104.12L100.00 197.00L99.18 104.12L62.88 189.62L97.67 103.49L31.41 168.59L96.51 102.33L10.38 137.12L95.88 100.82L3.00 100.00L95.88 99.18L10.38 62.88L96.51 97.67L31.41 31.41L97.67 96.51L62.88 10.38L99.18 95.88Z M104.0 100 A4.0 4.0 0 1 0 96.0 100 A4.0 4.0 0 1 0 104.0 100Z"/></svg>
+  <div class="brand"><span class="dot"></span>СИСТЕМНЫЙ SMM</div>
+  <div class="secno">02</div>
+  <h2>Объясняем изменения результата</h2>
+  <p class="desc">Нужно понять, за счет чего изменился их бизнес-результат.</p>
+  <div class="pageno">10 / 16</div>
+</section>
+
+<!-- СЛАЙД 11 -->
+<div class="label">Слайд 11</div>
+<section class="slide work vc">
+  <div class="kicker-s">Связь показателей</div>
+  <div class="midwrap">
+    <h2 class="h-work" style="margin-bottom:24px;">Связываем показатели между собой</h2>
+    <ul class="steplist ink">
+      <li><b>Выручка</b> ↔ продажи ↔ средний чек.</li>
+      <li><b>Продажи</b> ↔ лиды ↔ CR лид → продажа.</li>
+      <li><b>Затраты</b> ↔ лиды и продажи.</li>
+      <li><b>Затраты</b> ↔ CPL, CPA и ROMI.</li>
+    </ul>
+  </div>
+  <div class="pageno">11 / 16</div>
+</section>
+
+<!-- СЛАЙД 12 -->
+<div class="label">Слайд 12</div>
+<section class="slide structure">
+  <div class="kicker-s">Пример</div>
+  <div class="head"><span class="stag">Пример</span></div>
+  <div class="rows">
+    <div class="row"><div class="rk"><span class="rn">Instagram</span></div><div class="rc"><b>Продажи +21%, выручка +21%, средний чек без изменений</b>Выручка выросла за счет количества продаж</div></div>
+    <div class="row"><div class="rk"><span class="rn">Instagram</span></div><div class="rc"><b>Затраты +28%, выручка +21%</b>Затраты росли быстрее выручки, ROMI немного снизился</div></div>
+    <div class="row"><div class="rk"><span class="rn">Telegram</span></div><div class="rc"><b>Затраты -10%, лиды +50%, продажи +33%</b>Больше результата при меньших затратах</div></div>
+  </div>
+  <div class="pageno">12 / 16</div>
+</section>
+
+<!-- СЛАЙД 13 -->
+<div class="label">Слайд 13</div>
+<section class="slide work vc">
+  <div class="kicker-s">Внешние факторы</div>
+  <div class="midwrap" style="gap:24px;">
+    <h2 class="h-work">Учитываем контекст периода</h2>
+    <p class="bigfact">Вспоминаем, что менялось в работе с каналом в этом периоде: бюджет, количество размещений, объем контента, рекламные кампании и другие действия.</p>
+  </div>
+  <div class="pageno">13 / 16</div>
+</section>
+
+<!-- СЛАЙД 14 -->
+<div class="label">Слайд 14</div>
+<section class="slide work">
+  <div class="kicker-s">Решения</div>
+  <div class="head"><h2 class="h-work">Принимаем решение по каждому каналу</h2></div>
+  <div class="deflist-rows">
+    <div class="dlrow"><div class="dt">Краткий вывод</div><div class="dd">что мы поняли из данных.<br><span style="font-size:16px;color:var(--ink-soft);">Например: выручка растет, ROMI высокий, канал сохраняет эффективность.</span></div></div>
+    <div class="dlrow"><div class="dt">Решение</div><div class="dd">что в целом делаем с каналом.<br><span style="font-size:16px;color:var(--ink-soft);">Например: масштабируем.</span></div></div>
+    <div class="dlrow"><div class="dt">Что делаем</div><div class="dd">какое конкретное действие выполняем.<br><span style="font-size:16px;color:var(--ink-soft);">Например: поэтапно увеличиваем вложения в канал.</span></div></div>
+  </div>
+  <div class="pageno">14 / 16</div>
+</section>
+
+<!-- СЛАЙД 15 -->
+<div class="label">Слайд 15</div>
+<section class="slide structure fill">
+  <div class="kicker-s">План действий</div>
+  <div class="rows">
+    <div class="row"><div class="rk"><span class="rn">Instagram</span></div><div class="rc"><b>Решение: Масштабировать</b>Выручка +21%, CR вырос, ROMI высокий.<br>Что делаем: Поэтапно увеличивать вложения.</div></div>
+    <div class="row"><div class="rk"><span class="rn">Telegram</span></div><div class="rc"><b>Решение: Масштабировать</b>Выручка +33% при снижении затрат, ROMI вырос.<br>Что делаем: Увеличить объем и проверить сохранение эффективности.</div></div>
+    <div class="row"><div class="rk"><span class="rn">LinkedIn</span></div><div class="rc"><b>Решение: Добрать данные</b>Есть продажи без прямых затрат, но данных мало.<br>Что делаем: Сохранить органическое присутствие еще 1–2 периода.</div></div>
+    <div class="row"><div class="rk"><span class="rn">YouTube</span></div><div class="rc"><b>Решение: Добрать данные</b>Появилась первая продажа, данных недостаточно.<br>Что делаем: Сохранить текущий объем вложений еще на 1 период.</div></div>
+  </div>
+  <div class="pageno">15 / 16</div>
+</section>
+
+<!-- СЛАЙД 16 -->
+<div class="label">Слайд 16</div>
+<section class="slide question dark">
+  <svg class="star tr" viewBox="0 0 200 200" aria-hidden="true"><path fill-rule="evenodd" d="M100.00 3.00L100.82 95.88L137.12 10.38L102.33 96.51L168.59 31.41L103.49 97.67L189.62 62.88L104.12 99.18L197.00 100.00L104.12 100.82L189.62 137.12L103.49 102.33L168.59 168.59L102.33 103.49L137.12 189.62L100.82 104.12L100.00 197.00L99.18 104.12L62.88 189.62L97.67 103.49L31.41 168.59L96.51 102.33L10.38 137.12L95.88 100.82L3.00 100.00L95.88 99.18L10.38 62.88L96.51 97.67L31.41 31.41L97.67 96.51L62.88 10.38L99.18 95.88Z M104.0 100 A4.0 4.0 0 1 0 96.0 100 A4.0 4.0 0 1 0 104.0 100Z"/></svg>
+  <div class="brand"><span class="dot"></span>СИСТЕМНЫЙ SMM</div>
+  <h2>Переходим к анализу<br>SMM-воронок</h2>
+  <p class="desc">Следующий шаг — понять, за счет каких этапов SMM-воронки этот результат сформировался.</p>
+  <div class="pageno">16 / 16</div>
+</section>
+
+</body>
+</html>
